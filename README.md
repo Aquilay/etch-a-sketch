@@ -1,1 +1,1 @@
-# etch-a-sketch
+This is the third project in the Odin-Project curriculum : Making an Etch-a-Sketch game using javascript.
