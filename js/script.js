@@ -9,6 +9,7 @@ const rainbow_btn = document.getElementById("rainbow-btn");
 const custom_btn = document.getElementById("custom-btn");
 const eraser_btn = document.getElementById("eraser-btn");
 const grid = document.getElementById("grid");
+let custom_color = "";
 let draw_mode = "";
 let cells = [];
 let size = 16;
@@ -59,6 +60,9 @@ function colorCell(){
             color = color.replace(/[\d\.]+\)$/g, `${Number(alpha)+.1})`);
             this.style.backgroundColor = color;
             break;
+        case "custom":
+            this.style.backgroundColor = custom_color;
+            break;
         case "eraser":
             this.style.backgroundColor = "white";
             break;
@@ -77,3 +81,9 @@ black_btn.addEventListener("click", function() {draw_mode = "black"});
 grayscale_btn.addEventListener("click", function() {draw_mode = "grayscale"});
 rainbow_btn.addEventListener("click", function() {draw_mode = "rainbow"});
 eraser_btn.addEventListener("click", function() {draw_mode = "eraser"});
+custom_btn.addEventListener("click", function() {draw_mode = "custom"});
+jscolor.install();
+custom_btn.jscolor.option("position", "left");
+custom_btn.jscolor.onInput = function() {
+    custom_color = this.toRGBAString();
+}

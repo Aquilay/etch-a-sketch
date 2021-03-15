@@ -25,7 +25,7 @@ button {
     transition: ease-out 0.6s;
 }
 #custom-btn {
-    border-bottom: solid 5px cyan;
+    /*border-bottom: solid 5px cyan;*/
 }
 #grayscale-btn {
     border-bottom: solid 5px gray;
@@ -76,7 +76,7 @@ button:hover {
     color: white
 }
 #custom-btn:hover {
-    box-shadow: inset 400px 0 0 0 cyan;
+    /*box-shadow: inset 400px 0 0 0 cyan;*/
     color: white;
 }
 #buttons-container button {
@@ -114,6 +114,16 @@ button:hover {
 h1 {
     font-family: "Akaya Telivigala", cursive;
     font-size : 64px;
+}
+#bottom-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end; 
+}
+#bottom-container p {
+    font-family: "abeezee", "open sans";
+    font-size : 12px;
 }
 #buttons-container {
     display: flex;
