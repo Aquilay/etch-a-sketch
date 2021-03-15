@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Etch-a-sketch</title>
+    <!-- Css and Fonts-->
+    <LINK rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Akaya+Telivigala&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div id="left-container">
+            <div id="title-container">
+                <h1>Etch-a-sketch</h1>
+                <div id="size-container">
+                    <p>Grid size</p>
+                    <input type="range" min="4" max="64" value="16" step="2" class="slider" id="size-slider">
+                    <p id="size-indicator">16</p>
+                    <button id="size-btn">Apply</button>
+                </div>
+            </div>
+            <div id="buttons-container">
+                <button id="custom-btn">Custom</button>
+                <button id="rainbow-btn"><p>Rainbow</p></button>
+                <button id="grayscale-btn">Grayscale</button>
+                <button id="black-btn">Black</button>
+                <button id="eraser-btn">Eraser</button>
+                <button id="clear-btn">Clear Grid</button>
+            </div>
+        </div>
+        <div id="grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+</body>
+
+<script type="text/javascript" src="js/script.js"></script>
