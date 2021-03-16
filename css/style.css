@@ -4,6 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "abeezee", "open sans";
+    font-size: 14px; 
 }
 main {
     width: 90%;
@@ -93,6 +95,9 @@ button:hover {
     display: flex;
     flex-direction: column;
     /*border : dotted black 3px;*/
+}
+.instructions {
+    margin-top: 20px;
 }
 #size-container {
     display: flex;

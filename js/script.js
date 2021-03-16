@@ -9,6 +9,7 @@ const rainbow_btn = document.getElementById("rainbow-btn");
 const custom_btn = document.getElementById("custom-btn");
 const eraser_btn = document.getElementById("eraser-btn");
 const grid = document.getElementById("grid");
+let draw = false;
 let custom_color = "";
 let draw_mode = "";
 let cells = [];
@@ -45,27 +46,29 @@ function randomColor(brightness){
   }
 // Colors cells
 function colorCell(){
-    switch (draw_mode) {
-        case "black":
-            this.style.backgroundColor = "black";
-            break;
-        case "rainbow":
-            this.style.backgroundColor = `${randomColor(0)}`;
-            break;
-        case "grayscale":
-            let color = window.getComputedStyle(this).backgroundColor;
-            let alpha = color.match(/[\d\.]+\)$/g)[0];
-            alpha = alpha.slice(0,-1);
-            console.log(alpha);
-            color = color.replace(/[\d\.]+\)$/g, `${Number(alpha)+.1})`);
-            this.style.backgroundColor = color;
-            break;
-        case "custom":
-            this.style.backgroundColor = custom_color;
-            break;
-        case "eraser":
-            this.style.backgroundColor = "white";
-            break;
+    if (draw) {
+        switch (draw_mode) {
+            case "black":
+                this.style.backgroundColor = "black";
+                break;
+            case "rainbow":
+                this.style.backgroundColor = `${randomColor(0)}`;
+                break;
+            case "grayscale":
+                let color = window.getComputedStyle(this).backgroundColor;
+                let alpha = color.match(/[\d\.]+\)$/g)[0];
+                alpha = alpha.slice(0,-1);
+                console.log(alpha);
+                color = color.replace(/[\d\.]+\)$/g, `${Number(alpha)+.1})`);
+                this.style.backgroundColor = color;
+                break;
+            case "custom":
+                this.style.backgroundColor = custom_color;
+                break;
+            case "eraser":
+                this.style.backgroundColor = "white";
+                break;     
+    }
     } 
 }
 // updating size slider and variable
@@ -75,6 +78,8 @@ size_slider.addEventListener("input", function() {
 });
 // Redrawing Grid
 size_btn.addEventListener("click", redrawGrid);
+// Toggling draw on / off
+grid.addEventListener("click", function() {draw = !draw});
 // Buttons event listeners
 clear_btn.addEventListener("click", redrawGrid);
 black_btn.addEventListener("click", function() {draw_mode = "black"});
